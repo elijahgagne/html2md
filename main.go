@@ -17,7 +17,7 @@ func main() {
 		panic(err)
 	}
 
-	if info.Mode()&os.ModeCharDevice != 0 || info.Size() <= 0 {
+	if info.Mode()&os.ModeNamedPipe == 0 {
 		fmt.Println("The command is intended to work with pipes.")
 		fmt.Println("Usage: cat index.html | html2md")
 		return
