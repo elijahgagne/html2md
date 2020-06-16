@@ -38,6 +38,7 @@ func main() {
 	converter := md.NewConverter("", true, nil)
 	converter.Use(plugin.GitHubFlavored())
 	converter.Use(plugin.ConfluenceCodeBlock())
+	converter.Use(plugin.ConfluenceAttachments())
 	markdown, err := converter.ConvertString(html)
 	if err != nil {
 		log.Fatal(err)
